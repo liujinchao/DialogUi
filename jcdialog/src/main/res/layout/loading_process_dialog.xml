@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:orientation="horizontal"
+	android:id="@+id/dialog_view"
+	android:layout_width="wrap_content"
+	android:layout_height="wrap_content"
+	android:minHeight="100dp"
+	android:minWidth="220dp"
+	android:padding="10dp"
+	android:background="@drawable/bg_dialog_out_shape"
+	android:gravity="center">
+
+	<LinearLayout
+		android:id="@+id/progress_Bar_Layout"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:orientation="vertical"
+		android:gravity="center">
+	<ImageView
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:id="@+id/img_loading_rotate"
+		android:src="@drawable/img_loading_rotate"/>
+		<TextView
+		android:id="@+id/tipTextViewBottom"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_marginTop="10dp"
+		android:text="数据加载中" />
+	</LinearLayout>
+	<TextView
+		android:id="@+id/tipTextViewRight"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_marginLeft="10dp"
+		android:text="数据加载中"/>
+
+</LinearLayout>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <Button
+        android:id="@+id/btn_toast_top"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="上 toast"/>
+
+    <Button
+        android:id="@+id/btn_toast_center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="中 toast"/>
+
+    <Button
+        android:id="@+id/btn_toast"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="下 toast"/>
+    <Button
+        android:id="@+id/btn_toast_img"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="带有image的toast"/>
+</LinearLayout>

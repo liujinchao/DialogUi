@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="20dp">
+    <android.support.v4.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <Button
+                android:id="@+id/btn_popu"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="popuwindow"/>
+            <TextView
+                android:id="@+id/btn_loading_dialog"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="等待框"/>
+            <Button
+                android:id="@+id/btn_loading_horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="横向 loading"/>
+
+            <Button
+                android:id="@+id/btn_loading_vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="竖向 loading"/>
+
+            <Button
+                android:id="@+id/btn_loading_horizontal_gray"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="横向 loading 灰色"/>
+
+            <Button
+                android:id="@+id/btn_loading_vertical_gray"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="竖向 loading 灰色"/>
+
+            <Button
+                android:id="@+id/btn_md_loading_horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="MD 风格横向 loading"/>
+
+            <Button
+                android:id="@+id/btn_md_loading_vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="MD 风格竖向 loading"/>
+            <TextView
+                android:id="@+id/btn_dialog2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="对话框"/>
+            <Button
+                android:id="@+id/btn_custom_alert"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="自定义弹出框"/>
+
+            <Button
+                android:id="@+id/btn_custom_bottom_alert"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="自定义底部弹出框"/>
+
+            <Button
+                android:id="@+id/btn_md_alert"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="md 风格弹出框"/>
+            <Button
+                android:id="@+id/btn_dialog"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="纯文本 dialog"/>
+
+            <Button
+                android:id="@+id/btn_tie_alert"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="提示框"/>
+
+            <Button
+                android:id="@+id/btn_alert_horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="横向弹出框"/>
+
+            <Button
+                android:id="@+id/btn_alert_vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="竖向弹出框"/>
+
+            <Button
+                android:id="@+id/btn_alert_input"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="输入框"/>
+            <TextView
+                android:id="@+id/btn_select_dialog"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="选择列表框"/>
+            <Button
+                android:id="@+id/btn_alert_multichoose"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="md 风格多选框"/>
+
+            <Button
+                android:id="@+id/btn_alert_singlechoose"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="单选框"/>
+
+            <Button
+                android:id="@+id/btn_bottom_sheet_cancel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="带取消的底部列表"/>
+
+            <Button
+                android:id="@+id/btn_center_sheet"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="中间列表"/>
+
+            <Button
+                android:id="@+id/btn_md_bottom_vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="md 风格底部竖向列表"/>
+
+            <Button
+                android:id="@+id/btn_md_bottom_horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="md 风格底部横向列表"/>
+            <TextView
+                android:id="@+id/btn_time_dialog"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="时间框"/>
+            <Button
+                android:id="@+id/btn_select_ymd"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="选择日期年月日"/>
+
+            <Button
+                android:id="@+id/btn_select_ymdhm"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="选择日期年月日时分"/>
+
+            <Button
+                android:id="@+id/btn_select_ymdhms"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="选择日期年月日时分秒"/>
+            <Button
+                android:id="@+id/btn_select_time_ymdhms"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="日期年月日时分"/>
+
+            <TextView
+                android:id="@+id/btn_address_dialog"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="地址框"/>
+            <Button
+                android:id="@+id/btn_select_address"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="仿京东地址选择"/>
+            <Button
+                android:id="@+id/btn_select_address_picker"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="地址选择"/>
+            <Button
+                android:id="@+id/btn_select_time"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="联动选择器"/>
+        </LinearLayout>
+    </android.support.v4.widget.NestedScrollView>
+
+</LinearLayout>

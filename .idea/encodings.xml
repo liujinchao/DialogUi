@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding">
+    <file url="file://$PROJECT_DIR$/app/src/main/res/layout/activity_picker_view_layout.xml" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/app/src/main/res/layout/item_card_view.xml" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/jcdialog/src/main/java/com/widget/jcdialog/widget/RecycleView/AppBarStateChangeListener.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/jcdialog/src/main/java/com/widget/jcdialog/widget/RecycleView/BaseIndicatorController.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/jcdialog/src/main/java/com/widget/jcdialog/widget/RecycleView/BaseRefreshHeader.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/jcdialog/src/main/java/com/widget/jcdialog/widget/RecycleView/LoadingIndicatorView.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/jcdialog/src/main/java/com/widget/jcdialog/widget/RecycleView/PacmanIndicator.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/jcdialog/src/main/java/com/widget/jcdialog/widget/RecycleView/SimpleViewSwitcher.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/jcdialog/src/main/java/com/widget/jcdialog/widget/pickerview/adapter/ArrayWheelAdapter.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/jcdialog/src/main/java/com/widget/jcdialog/widget/pickerview/adapter/NumericWheelAdapter.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/jcdialog/src/main/java/com/widget/jcdialog/widget/pickerview/adapter/WheelAdapter.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/jcdialog/src/main/java/com/widget/jcdialog/widget/pickerview/lib/InertiaTimerTask.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/jcdialog/src/main/java/com/widget/jcdialog/widget/pickerview/lib/LoopViewGestureListener.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/jcdialog/src/main/java/com/widget/jcdialog/widget/pickerview/lib/MessageHandler.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/jcdialog/src/main/java/com/widget/jcdialog/widget/pickerview/lib/OnItemSelectedRunnable.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/jcdialog/src/main/java/com/widget/jcdialog/widget/pickerview/listener/OnDismissListener.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/jcdialog/src/main/java/com/widget/jcdialog/widget/pickerview/listener/OnItemSelectedListener.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/jcdialog/src/main/java/com/widget/jcdialog/widget/pickerview/model/IPickerViewData.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/jcdialog/src/main/java/com/widget/jcdialog/widget/pickerview/model/PickerViewData.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/jcdialog/src/main/java/com/widget/jcdialog/widget/pickerview/utils/PickerViewAnimateUtil.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/jcdialog/src/main/res/drawable/selector_pickerview_btn.xml" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/jcdialog/src/main/res/layout/include_pickerview_topbar.xml" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/jcdialog/src/main/res/layout/layout_basepickerview.xml" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/jcdialog/src/main/res/layout/pickerview_options.xml" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/jcdialog/src/main/res/layout/pickerview_time.xml" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/jcdialog/src/main/res/layout/recycle_view_header.xml" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/jcdialog/src/main/res/values/bools.xml" charset="GBK" />
+  </component>
+</project>

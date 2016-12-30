@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:background="@drawable/dialogui_shape_wihte_round_corner"
+      android:orientation="vertical"
+      android:padding="10dp">
+
+    <TextView
+        android:id="@+id/dialogui_tv_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="有时候原谅一个人是因为太在乎，所以一让再让；有时候不去吵是因为舍不得，所以一忍再忍。感情，是两心的慢慢磨合；相处，是两人的相互退让。一颗心，始终不愿放弃，是知道一路走来有多么的不易；一个人总是默默守候，是懂得太多的风雨与共需要莫大的勇气。其实，这世上没有谁属于谁，只会有谁会陪着谁。感情，从青涩到味浓，再从味浓到平淡，丢弃了自己的小情绪，只为慢慢适应对方。爱是两个人之间的互动；情是两颗心之间的习惯！"
+        android:textColor="#111111"
+        android:textSize="17sp"/>
+
+    <Button
+        android:id="@+id/btn_ok"
+        android:layout_gravity="center_horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="确定"/>
+
+
+</LinearLayout>
+
+
+

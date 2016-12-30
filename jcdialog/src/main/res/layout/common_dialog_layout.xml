@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@drawable/bg_dialog_out_shape"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:id="@+id/lt_close"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content" >
+
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/commondialog_higth"
+            android:layout_centerInParent="true"
+            android:gravity="center"
+            android:text="提示"
+            android:textColor="@color/commomdialog_color"
+            android:textSize="@dimen/custom_commondialog_title_text_size" />
+
+        <ImageView
+            android:id="@+id/tv_close"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="20dp"
+            android:scaleType="fitCenter"
+            android:visibility="gone" >
+        </ImageView>
+    </RelativeLayout>
+
+    <View
+        android:id="@+id/line1"
+        android:layout_width="fill_parent"
+        android:layout_height="1px"
+        android:background="#cdccd1" />
+
+    <LinearLayout
+        android:id="@+id/lt_difine"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:gravity="center_vertical"
+        android:minHeight="@dimen/commondialog_minihigth"
+        android:orientation="vertical" >
+
+        <EditText
+            android:id="@+id/tv_message"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:layout_marginBottom="15dp"
+            android:background="@null"
+            android:cursorVisible="false"
+            android:ems="10"
+            android:focusable="false"
+            android:gravity="center_vertical"
+            android:maxLines="10"
+            android:lineSpacingExtra="8dp"
+            android:textSize="@dimen/custom_commondialog_context_text_size" />
+
+        <!--<RelativeLayout-->
+            <!--android:id="@+id/et_verify_layout"-->
+            <!--android:layout_width="fill_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_marginTop="10dp"-->
+            <!--android:layout_marginBottom="10dp"-->
+            <!--android:duplicateParentState="false"-->
+            <!--android:gravity="center_vertical"-->
+            <!--android:visibility="gone" >-->
+
+            <!--<EditText-->
+                <!--android:id="@+id/et_verify"-->
+                <!--android:layout_width="fill_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_toLeftOf="@+id/iv_delete3"-->
+                <!--android:inputType="textMultiLine"-->
+                <!--android:background="@drawable/edit_bg"-->
+                <!--android:maxLines="3"-->
+                <!--android:padding="@dimen/input_edit_text_padding"-->
+                <!--android:layout_gravity="center_vertical"-->
+                <!--android:textColor="#3A3A3A"-->
+                <!--android:hint="请输入登录密码"-->
+                <!--android:textSize="@dimen/input_edit_text_size"-->
+                 <!--/>-->
+
+            <!--<ImageView-->
+                <!--android:id="@+id/iv_delete3"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_alignParentRight="true"-->
+                <!--android:paddingRight="6dp"-->
+                <!--android:layout_gravity="center_vertical"-->
+                <!--android:layout_centerVertical="true"-->
+                <!--android:contentDescription="@null"-->
+                <!--android:src="@drawable/icon_close_press"-->
+                <!--android:visibility="gone" />-->
+        <!--</RelativeLayout>-->
+    </LinearLayout>
+
+    <View
+        android:id="@+id/line2"
+        android:layout_width="fill_parent"
+        android:layout_height="1px"
+        android:background="#cdccd1" />
+
+    <LinearLayout
+        android:id="@+id/operation_layout"
+        android:layout_width="fill_parent"
+        android:layout_height="@dimen/commondialog_operation_layout"
+        android:layout_gravity="bottom"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:splitMotionEvents="false" >
+
+        <Button
+            android:id="@+id/cancel_btn"
+            android:layout_width="0dip"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            android:background="@drawable/btn_left_bottom_radios"
+            android:gravity="center"
+            android:text="取消"
+
+            android:textSize="@dimen/custom_commondialog_btn_text_size"
+            android:visibility="gone" />
+
+        <View
+            android:id="@+id/line3"
+            android:layout_width="1px"
+            android:layout_height="fill_parent"
+            android:background="#cdccd1" />
+
+        <Button
+            android:id="@+id/confirm_btn"
+            android:layout_width="0dip"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            android:background="@drawable/btn_right_bottom_radios"
+            android:gravity="center"
+            android:text="确定"
+            android:textSize="@dimen/custom_commondialog_btn_text_size"
+            android:visibility="gone" />
+    </LinearLayout>
+
+    <!-- android:textColor="#2181f7" -->
+
+</LinearLayout>

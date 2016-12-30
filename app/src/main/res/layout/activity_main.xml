@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:id="@+id/ll_main"
+              android:layout_margin="@dimen/dialogui_margin_mid"
+              android:background="@android:color/white"
+              android:orientation="vertical">
+
+    <android.support.v4.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <Button
+                android:id="@+id/btn_toast_top"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Toast相关"/>
+
+            <Button
+                android:id="@+id/btn_dialog_about"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="对话框相关"/>
+
+            <Button
+                android:id="@+id/btn_pull_to_refresh"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="下拉刷新"/>
+            <Button
+                android:id="@+id/btn_loading_tip_dialog"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="内嵌等待框"/>
+
+        </LinearLayout>
+    </android.support.v4.widget.NestedScrollView>
+
+
+</LinearLayout>

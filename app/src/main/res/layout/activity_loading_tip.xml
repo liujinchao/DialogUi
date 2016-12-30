@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <Button
+            android:id="@+id/loading_tip_loading"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="loading_tip_loading"/>
+        <Button
+            android:id="@+id/loading_tip_net_error"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="loading_tip_net_error"/>
+        <Button
+            android:id="@+id/loading_tip_empty"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="loading_tip_empty"/>
+        <Button
+            android:id="@+id/loading_tip_reload"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="loading_tip_reload"/>
+        <Button
+            android:id="@+id/loading_tip_no_net"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="loading_tip_no_net"/>
+    </LinearLayout>
+    <com.widget.jcdialog.widget.LoadingTip
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/loadedTip"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:visibility="gone">
+    </com.widget.jcdialog.widget.LoadingTip>
+</RelativeLayout>
