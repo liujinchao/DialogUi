@@ -26,7 +26,7 @@
             android:id="@+id/loading_tip_reload"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="loading_tip_reload"/>
+            android:text="loading_tip_finish"/>
         <Button
             android:id="@+id/loading_tip_no_net"
             android:layout_width="wrap_content"

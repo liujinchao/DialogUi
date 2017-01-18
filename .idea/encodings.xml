@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="Encoding">
-    <file url="file://$PROJECT_DIR$/app/src/main/res/layout/activity_picker_view_layout.xml" charset="GBK" />
     <file url="file://$PROJECT_DIR$/app/src/main/res/layout/item_card_view.xml" charset="GBK" />
     <file url="file://$PROJECT_DIR$/jcdialog/src/main/java/com/widget/jcdialog/widget/RecycleView/AppBarStateChangeListener.java" charset="GBK" />
     <file url="file://$PROJECT_DIR$/jcdialog/src/main/java/com/widget/jcdialog/widget/RecycleView/BaseIndicatorController.java" charset="GBK" />
@@ -21,6 +20,7 @@
     <file url="file://$PROJECT_DIR$/jcdialog/src/main/java/com/widget/jcdialog/widget/pickerview/model/IPickerViewData.java" charset="GBK" />
     <file url="file://$PROJECT_DIR$/jcdialog/src/main/java/com/widget/jcdialog/widget/pickerview/model/PickerViewData.java" charset="GBK" />
     <file url="file://$PROJECT_DIR$/jcdialog/src/main/java/com/widget/jcdialog/widget/pickerview/utils/PickerViewAnimateUtil.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/jcdialog/src/main/res/drawable-hdpi/head_default.png" charset="GBK" />
     <file url="file://$PROJECT_DIR$/jcdialog/src/main/res/drawable/selector_pickerview_btn.xml" charset="GBK" />
     <file url="file://$PROJECT_DIR$/jcdialog/src/main/res/layout/include_pickerview_topbar.xml" charset="GBK" />
     <file url="file://$PROJECT_DIR$/jcdialog/src/main/res/layout/layout_basepickerview.xml" charset="GBK" />

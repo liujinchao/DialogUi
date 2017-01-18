@@ -15,10 +15,22 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ToastActivity"/>
-        <activity android:name=".DialogActivity"/>
-        <activity android:name=".RecycleviewActivity"/>
-        <activity android:name=".LoadingTipActivity"/>
+        <activity android:name=".activity.ToastActivity">
+            <intent-filter>
+                <data
+                    android:scheme="app"
+                    android:host="dialog"
+                    android:path="/toast"
+                    >
+                </data>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+            </intent-filter>
+        </activity>
+        <activity android:name=".activity.DialogActivity"/>
+        <activity android:name=".activity.RecycleviewActivity"/>
+        <activity android:name=".activity.LoadingTipActivity"/>
     </application>
 
 </manifest>

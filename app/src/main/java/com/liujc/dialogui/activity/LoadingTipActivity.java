@@ -1,9 +1,10 @@
-package com.liujc.dialogui;
+package com.liujc.dialogui.activity;
 
 import android.app.Activity;
 import android.os.Bundle;
 import android.view.View;
 
+import com.liujc.dialogui.R;
 import com.widget.jcdialog.widget.LoadingTip;
 
 import butterknife.Bind;

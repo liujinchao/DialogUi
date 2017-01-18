@@ -1,5 +1,6 @@
-package com.liujc.dialogui;
+package com.liujc.dialogui.activity;
 
+import android.app.Activity;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.design.widget.AppBarLayout;
@@ -11,6 +12,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.LinearLayout;
 
+import com.liujc.dialogui.R;
 import com.liujc.dialogui.adapter.RecycleAdapter;
 import com.widget.jcdialog.widget.RecycleView.PullToRefreshRecycleView;
 
@@ -24,7 +26,7 @@ import java.util.ArrayList;
  * 最近修改时间：2016/10/26 09:08
  * 修改人：Modify by liujc
  */
-public class RecycleviewActivity extends AppCompatActivity implements PullToRefreshRecycleView.LoadingListener {
+public class RecycleviewActivity extends Activity implements PullToRefreshRecycleView.LoadingListener {
 
     private Toolbar toolbar;
     private CollapsingToolbarLayout collapsingToolbar;
@@ -46,7 +48,7 @@ public class RecycleviewActivity extends AppCompatActivity implements PullToRefr
 
     private void initView() {
         toolbar = (Toolbar) findViewById(R.id.toolbar);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+//        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

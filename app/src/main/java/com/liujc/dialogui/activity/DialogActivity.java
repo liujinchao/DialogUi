@@ -1,4 +1,4 @@
-package com.liujc.dialogui;
+package com.liujc.dialogui.activity;
 
 import android.app.Activity;
 import android.app.Dialog;
@@ -12,6 +12,7 @@ import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.LinearLayout;
 
+import com.liujc.dialogui.R;
 import com.widget.jcdialog.DialogUtils;
 import com.widget.jcdialog.adapter.TieAdapter;
 import com.widget.jcdialog.bean.BuildBean;
