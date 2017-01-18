@@ -29,6 +29,8 @@ import com.widget.jcdialog.widget.JDAddressSeletor.BottomDialog;
 import com.widget.jcdialog.widget.JDAddressSeletor.DefaultAddressProvider;
 import com.widget.jcdialog.widget.JDAddressSeletor.OnAddressSelectedListener;
 import com.widget.jcdialog.widget.PopuWindowView;
+import com.widget.jcdialog.widget.bottomMenu.BottomButtonMenu;
+import com.widget.jcdialog.widget.bottomMenu.BottomMenuWindow;
 import com.widget.jcdialog.widget.pickerview.OptionsPickerView;
 import com.widget.jcdialog.widget.pickerview.TimePickerView;
 import com.widget.jcdialog.widget.pickerview.model.CityModel;
@@ -71,7 +73,7 @@ public class DialogActivity extends AppCompatActivity implements View.OnClickLis
 
     @OnClick({R.id.btn_loading_dialog,R.id.btn_dialog2,R.id.btn_select_dialog,R.id.btn_time_dialog,R.id.btn_address_dialog,
             R.id.btn_custom_bottom_alert, R.id.btn_popu, R.id.btn_select_ymd, R.id.btn_select_ymdhm, R.id.btn_select_ymdhms, R.id.btn_dialog, R.id.btn_loading_vertical, R.id.btn_loading_horizontal, R.id.btn_loading_vertical_gray, R.id.btn_loading_horizontal_gray, R.id.btn_md_loading_vertical, R.id.btn_md_loading_horizontal, R.id.btn_md_alert, R.id.btn_tie_alert, R.id.btn_alert_horizontal,
-            R.id.btn_alert_vertical, R.id.btn_bottom_sheet_cancel, R.id.btn_center_sheet, R.id.btn_alert_input,
+            R.id.btn_alert_vertical, R.id.btn_bottom_sheet_cancel, R.id.btn_center_sheet, R.id.btn_alert_input,R.id.btn_custom_bottom_alert2,
             R.id.btn_alert_multichoose, R.id.btn_alert_singlechoose, R.id.btn_md_bottom_vertical, R.id.btn_md_bottom_horizontal,
             R.id.btn_custom_alert,R.id.btn_select_address,R.id.btn_select_time,R.id.btn_select_time_ymdhms,R.id.btn_select_address_picker})
     public void onClick(View view) {
@@ -168,6 +170,9 @@ public class DialogActivity extends AppCompatActivity implements View.OnClickLis
             case R.id.btn_custom_bottom_alert:
                 View rootViewB = View.inflate(mActivity, R.layout.custom_dialog_layout, null);
                 DialogUtils.showCustomBottomAlert(this, rootViewB).show();
+                break;
+            case R.id.btn_custom_bottom_alert2:
+                showBottomMenu();
                 break;
             case R.id.btn_loading_vertical:
                 DialogUtils.showLoadingVertical(this, "加载中...").show();
@@ -384,7 +389,7 @@ public class DialogActivity extends AppCompatActivity implements View.OnClickLis
         startActivity(intent);
     }
 
-    private void showBottomMenu() {
+    private void showCommonDialog() {
         final CommonDialog commonDialog = new CommonDialog(DialogActivity.this,DialogActivity.class.getSimpleName(),1);
         commonDialog.setMessage("hello");
         commonDialog.setCancleButton(new CommonDialog.BtnClickedListener() {
@@ -400,5 +405,23 @@ public class DialogActivity extends AppCompatActivity implements View.OnClickLis
             }
         },"queding");
         commonDialog.showDialog();
+    }
+
+    private void showBottomMenu() {
+        BottomButtonMenu bottomMenu = new BottomButtonMenu(this);
+
+        bottomMenu.addButtonFirst(new BottomMenuWindow.MenuClickedListener() {
+            @Override
+            public void onMenuClicked() {
+            }
+        }, "目录1");
+
+        bottomMenu.addButtonSecond(new BottomMenuWindow.MenuClickedListener() {
+            @Override
+            public void onMenuClicked() {
+
+            }
+        }, "目录2");
+        bottomMenu.show();
     }
 }

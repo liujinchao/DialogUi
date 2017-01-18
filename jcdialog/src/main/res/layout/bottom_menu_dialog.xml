@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:layout_alignParentBottom="true"
+    android:background="#ffffff"
+    android:orientation="vertical" >
+
+    <ScrollView
+        android:id="@+id/scroll_view"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content" >
+
+        <LinearLayout
+            android:id="@+id/bottom_menu_layout"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:background="#ffffff"
+            android:duplicateParentState="false"
+            android:orientation="vertical"
+            android:layout_marginTop="@dimen/bottom_menu_layout_marginTop">
+
+            <Button
+                android:id="@+id/bottom_menu_button1"
+                android:layout_width="fill_parent"
+                android:layout_height="@dimen/bottom_menu_layout_button1_height"
+                android:paddingTop="@dimen/bottom_menu_layout_button1_paddingTop"
+                android:background="@drawable/bg_bottom_menu_common_btn"
+                android:tag="1"
+                android:text="1"
+                android:textColor="#313233"
+                android:textSize="@dimen/bottom_context_word_size"
+                android:textStyle="normal"
+                android:visibility="gone" />
+
+            <View
+                android:id="@+id/bottom_menu_line1"
+                android:layout_width="fill_parent"
+                android:layout_height="1dp"
+                android:layout_marginLeft="@dimen/bottom_menu_layout_view_margin_left_right"
+                android:layout_marginRight="@dimen/bottom_menu_layout_view_margin_left_right"
+                android:background="#eeedf2"
+                android:tag="line1"
+                android:visibility="gone" />
+
+            <Button
+                android:id="@+id/bottom_menu_button2"
+                android:layout_width="fill_parent"
+                android:layout_height="@dimen/bottom_menu_layout_button1_height"
+                android:paddingTop="@dimen/bottom_menu_layout_button1_paddingTop"
+                android:background="@drawable/bg_bottom_menu_common_btn"
+                android:tag="2"
+                android:text="2"
+                android:textColor="#313233"
+                android:textSize="@dimen/bottom_context_word_size"
+                android:textStyle="normal"
+                android:visibility="gone" />
+
+            <View
+                android:id="@+id/bottom_menu_line2"
+                android:layout_width="fill_parent"
+                android:layout_height="1dp"
+                android:layout_marginLeft="@dimen/bottom_menu_layout_view_margin_left_right"
+                android:layout_marginRight="@dimen/bottom_menu_layout_view_margin_left_right"
+                android:background="#eeedf2"
+                android:tag="line2"
+                android:visibility="gone" />
+
+            <Button
+                android:id="@+id/bottom_menu_button3"
+                android:layout_width="fill_parent"
+                android:layout_height="@dimen/bottom_menu_layout_button1_height"
+                android:background="@drawable/bg_bottom_menu_common_btn"
+                android:tag="3"
+                android:text="3"
+                android:textColor="#313233"
+                android:textSize="@dimen/bottom_context_word_size"
+                android:textStyle="normal"
+                android:visibility="gone" />
+
+            <View
+                android:id="@+id/bottom_menu_line3"
+                android:layout_width="fill_parent"
+                android:layout_height="1dp"
+                android:layout_marginLeft="@dimen/bottom_menu_layout_view_margin_left_right"
+                android:layout_marginRight="@dimen/bottom_menu_layout_view_margin_left_right"
+                android:background="#eeedf2"
+                android:tag="line3"
+                android:visibility="gone" />
+
+            <Button
+                android:id="@+id/bottom_menu_button4"
+                android:layout_width="fill_parent"
+                android:layout_height="@dimen/bottom_menu_layout_button1_height"
+                android:background="@drawable/bg_bottom_menu_common_btn"
+                android:tag="4"
+                android:text="4"
+                android:textColor="#313233"
+                android:textSize="@dimen/bottom_context_word_size"
+                android:textStyle="normal"
+                android:visibility="gone" />
+
+            <View
+                android:id="@+id/bottom_menu_line4"
+                android:layout_width="fill_parent"
+                android:layout_height="1dp"
+                android:layout_marginLeft="@dimen/bottom_menu_layout_view_margin_left_right"
+                android:layout_marginRight="@dimen/bottom_menu_layout_view_margin_left_right"
+                android:background="#eeedf2"
+                android:tag="line4"
+                android:visibility="gone" />
+
+            <Button
+                android:id="@+id/bottom_menu_btn_exit"
+                android:layout_width="fill_parent"
+                android:layout_height="@dimen/bottom_menu_layout_button1_height"
+                android:background="@drawable/bg_bottom_menu_common_btn"
+                android:tag="5"
+                android:textColor="#FF0000"
+                android:textSize="@dimen/bottom_context_word_size"
+                android:textStyle="normal"
+                android:visibility="gone" />
+
+            <View
+                android:id="@+id/bottom_menu_line5"
+                android:layout_width="fill_parent"
+                android:layout_height="1dp"
+                android:layout_marginLeft="@dimen/bottom_menu_layout_view_margin_left_right"
+                android:layout_marginRight="@dimen/bottom_menu_layout_view_margin_left_right"
+                android:background="#eeedf2"
+                android:tag="line5"
+                android:visibility="gone" />
+        </LinearLayout>
+    </ScrollView>
+
+    <LinearLayout
+        android:id="@+id/bottom_menu_cancel_layout"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="25dp"
+        android:layout_marginTop="26dp"
+        android:duplicateParentState="false"
+        android:orientation="vertical"
+        >
+
+        <Button
+            android:id="@+id/bottom_menu_btn_cancel"
+            android:layout_width="fill_parent"
+            android:layout_height="@dimen/bottom_menu_layout_button1_height"
+            android:layout_marginLeft="@dimen/bottom_menu_layout_view_margin_left_right"
+            android:layout_marginRight="@dimen/bottom_menu_layout_view_margin_left_right"
+            android:background="@drawable/bg_bottom_menu_cancel_btn"
+            android:text="取消"
+            android:textSize="@dimen/bottom_context_word_size"
+            android:textStyle="normal" />
+    </LinearLayout>
+
+</LinearLayout>
