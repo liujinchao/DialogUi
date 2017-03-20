@@ -7,10 +7,7 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.support.v7.app.AppCompatDialog;
 import android.view.Gravity;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.widget.Toast;
-
 
 import com.widget.jcdialog.bean.BuildBean;
 import com.widget.jcdialog.bean.TieBean;
@@ -18,13 +15,12 @@ import com.widget.jcdialog.listener.DialogAssigner;
 import com.widget.jcdialog.listener.DialogUIDateTimeSaveListener;
 import com.widget.jcdialog.listener.DialogUIItemListener;
 import com.widget.jcdialog.listener.DialogUIListener;
-import com.widget.jcdialog.utils.ToolUtils;
-import com.widget.jcdialog.widget.JDAddressSeletor.AddressProvider;
 import com.widget.jcdialog.widget.JDAddressSeletor.BottomDialog;
 import com.widget.jcdialog.widget.JDAddressSeletor.DefaultAddressProvider;
 import com.widget.jcdialog.widget.JDAddressSeletor.OnAddressSelectedListener;
 import com.widget.jcdialog.widget.pickerview.OptionsPickerView;
 import com.widget.jcdialog.widget.pickerview.TimePickerView;
+import com.widget.jcdialog.widget.pswKeyBoard.widget.PopEnterPassword;
 
 import java.util.Date;
 import java.util.List;
@@ -545,4 +541,17 @@ public class DialogUtils {
         return DialogAssigner.getInstance().assignCustomBottomAlert(context, contentView, cancleable, outsideTouchable);
     }
 
+
+    /**
+     * 自定义支付框
+     * @param context
+     * @param parentView
+     */
+    public static PopEnterPassword showPayKeyBoard(Context context,View parentView){
+        PopEnterPassword popEnterPassword = new PopEnterPassword((Activity) context);
+        // 显示窗口
+        popEnterPassword.showAtLocation(parentView,
+                Gravity.BOTTOM | Gravity.CENTER_HORIZONTAL, 0, 0); // 设置layout在PopupWindow中显示的位置
+        return popEnterPassword;
+    }
 }

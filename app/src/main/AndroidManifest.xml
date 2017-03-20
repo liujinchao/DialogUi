@@ -31,6 +31,7 @@
         <activity android:name=".activity.DialogActivity"/>
         <activity android:name=".activity.RecycleviewActivity"/>
         <activity android:name=".activity.LoadingTipActivity"/>
+        <activity android:name=".activity.KeyBoardActivity"/>
     </application>
 
 </manifest>

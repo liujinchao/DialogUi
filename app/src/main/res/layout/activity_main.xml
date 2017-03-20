@@ -39,6 +39,11 @@
                 android:layout_height="wrap_content"
                 android:text="内嵌等待框"/>
 
+            <Button
+                android:id="@+id/btn_pay_keyboard"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="支付键盘"/>
         </LinearLayout>
     </android.support.v4.widget.NestedScrollView>
 

@@ -12,6 +12,7 @@ import android.view.View;
 import android.widget.LinearLayout;
 
 import com.liujc.dialogui.activity.DialogActivity;
+import com.liujc.dialogui.activity.KeyBoardActivity;
 import com.liujc.dialogui.activity.LoadingTipActivity;
 import com.liujc.dialogui.activity.RecycleviewActivity;
 import com.liujc.dialogui.activity.ToastActivity;
@@ -42,7 +43,7 @@ public class MainActivity extends AppCompatActivity {
         DialogUtils.init(mContext);
     }
 
-    @OnClick({R.id.btn_toast_top, R.id.btn_dialog_about, R.id.btn_pull_to_refresh,R.id.btn_loading_tip_dialog})
+    @OnClick({R.id.btn_toast_top, R.id.btn_dialog_about, R.id.btn_pull_to_refresh,R.id.btn_loading_tip_dialog,R.id.btn_pay_keyboard})
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.btn_toast_top:
@@ -57,6 +58,9 @@ public class MainActivity extends AppCompatActivity {
                 break;
             case R.id.btn_loading_tip_dialog:
                 jumpTarget(LoadingTipActivity.class);
+                break;
+            case R.id.btn_pay_keyboard:
+                jumpTarget(KeyBoardActivity.class);
                 break;
 
         }
