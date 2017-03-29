@@ -26,9 +26,12 @@
   3. 各种对话框
   4. 各种列表选择框
   5. 时间选择框
+  
   ![image](https://github.com/liujinchao/DialogUi/blob/master/screenshot/date1.png)
   ![image](https://github.com/liujinchao/DialogUi/blob/master/screenshot/date2.png)
+  
   6. 地址联动选择框
+  
   ![image](https://github.com/liujinchao/DialogUi/blob/master/screenshot/address.png)
   ![image](https://github.com/liujinchao/DialogUi/blob/master/screenshot/jdaddress.png)
   
@@ -40,6 +43,9 @@
 ## 内嵌加载等待框
 ## 支付键盘
 一般键盘
+ 
  ![image](https://github.com/liujinchao/DialogUi/blob/master/screenshot/一般键盘.png)
+ 
  支付键盘
+ 
  ![image](https://github.com/liujinchao/DialogUi/blob/master/screenshot/支付键盘.png)
