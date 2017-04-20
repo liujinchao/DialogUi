@@ -47,122 +47,122 @@ public class PullToRefreshRecycleView extends RecyclerView implements PullToRere
     private static List<Integer> sHeaderTypes = new ArrayList<>();//每个header必须有不同的type,不然滚动的时候顺序会变化
     private final AdapterDataObserver mDataObserver = new DataObserver();
     private AppBarStateChangeListener.State appbarState = AppBarStateChangeListener.State.EXPANDED;
-        public PullToRefreshRecycleView(Context context) {
-            this(context, null);
-        }
-        public PullToRefreshRecycleView(Context context, AttributeSet attrs) {
-            this(context, attrs, 0);
-        }
-        public PullToRefreshRecycleView(Context context, AttributeSet attrs, int defStyle) {
-            super(context, attrs, defStyle);
-            init(context);
-        }
+    public PullToRefreshRecycleView(Context context) {
+        this(context, null);
+    }
+    public PullToRefreshRecycleView(Context context, AttributeSet attrs) {
+        this(context, attrs, 0);
+    }
+    public PullToRefreshRecycleView(Context context, AttributeSet attrs, int defStyle) {
+        super(context, attrs, defStyle);
+        init(context);
+    }
 
-        private void init(Context context) {
-            if (refreshEnabled) {
-                mRefreshHeader = new ArrowRefreshHeader(context);
-                mRefreshHeader.setProgressStyle(mRefreshProgressStyle);
-            }
-            LoadingMoreFooter footView = new LoadingMoreFooter(context);
-            footView.setProgressStyle(mLoadingMoreProgressStyle);
-            mLoadMoreFootView = footView;
-            mLoadMoreFootView.setVisibility(GONE);
+    private void init(Context context) {
+        if (refreshEnabled) {
+            mRefreshHeader = new ArrowRefreshHeader(context);
+            mRefreshHeader.setProgressStyle(mRefreshProgressStyle);
         }
+        LoadingMoreFooter footView = new LoadingMoreFooter(context);
+        footView.setProgressStyle(mLoadingMoreProgressStyle);
+        mLoadMoreFootView = footView;
+        mLoadMoreFootView.setVisibility(GONE);
+    }
 
-        //判断是否是SuperRecyclerView保留的itemViewType
-        private boolean isReservedItemViewType(int itemViewType) {
-            if (itemViewType == TYPE_REFRESH_HEADER || itemViewType == TYPE_LOADMORE_FOOTER  || sHeaderTypes.contains(itemViewType)) {
-                return true;
+    //判断是否是SuperRecyclerView保留的itemViewType
+    private boolean isReservedItemViewType(int itemViewType) {
+        if (itemViewType == TYPE_REFRESH_HEADER || itemViewType == TYPE_LOADMORE_FOOTER  || sHeaderTypes.contains(itemViewType)) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    @Override
+    public void setAdapter(Adapter adapter) {
+        mWrapAdapter = new WrapAdapter(adapter);
+        super.setAdapter(mWrapAdapter);
+        adapter.registerAdapterDataObserver(mDataObserver);
+        mDataObserver.onChanged();
+    }
+
+    @Override
+    public void onScrollStateChanged(int state) {
+        super.onScrollStateChanged(state);
+        if (state == RecyclerView.SCROLL_STATE_IDLE && mLoadingListener != null && !isLoadingData && loadingMoreEnabled) {
+            LayoutManager layoutManager = getLayoutManager();
+            int lastVisibleItemPosition;
+            if (layoutManager instanceof GridLayoutManager) {
+                lastVisibleItemPosition = ((GridLayoutManager) layoutManager).findLastVisibleItemPosition();
+            } else if (layoutManager instanceof StaggeredGridLayoutManager) {
+                int[] into = new int[((StaggeredGridLayoutManager) layoutManager).getSpanCount()];
+                ((StaggeredGridLayoutManager) layoutManager).findLastVisibleItemPositions(into);
+                lastVisibleItemPosition = findMax(into);
             } else {
-                return false;
+                lastVisibleItemPosition = ((LinearLayoutManager) layoutManager).findLastVisibleItemPosition();
             }
-        }
-
-        @Override
-        public void setAdapter(Adapter adapter) {
-            mWrapAdapter = new WrapAdapter(adapter);
-            super.setAdapter(mWrapAdapter);
-            adapter.registerAdapterDataObserver(mDataObserver);
-            mDataObserver.onChanged();
-        }
-
-        @Override
-        public void onScrollStateChanged(int state) {
-            super.onScrollStateChanged(state);
-            if (state == RecyclerView.SCROLL_STATE_IDLE && mLoadingListener != null && !isLoadingData && loadingMoreEnabled) {
-                LayoutManager layoutManager = getLayoutManager();
-                int lastVisibleItemPosition;
-                if (layoutManager instanceof GridLayoutManager) {
-                    lastVisibleItemPosition = ((GridLayoutManager) layoutManager).findLastVisibleItemPosition();
-                } else if (layoutManager instanceof StaggeredGridLayoutManager) {
-                    int[] into = new int[((StaggeredGridLayoutManager) layoutManager).getSpanCount()];
-                    ((StaggeredGridLayoutManager) layoutManager).findLastVisibleItemPositions(into);
-                    lastVisibleItemPosition = findMax(into);
+            if (layoutManager.getChildCount() > 0
+                    && lastVisibleItemPosition >= layoutManager.getItemCount() - 1 && layoutManager.getItemCount() > layoutManager.getChildCount() && !isNoMore && mRefreshHeader.getState() < ArrowRefreshHeader.STATE_REFRESHING) {
+                isLoadingData = true;
+                if (mLoadMoreFootView instanceof LoadingMoreFooter) {
+                    ((LoadingMoreFooter) mLoadMoreFootView).setState(LoadingMoreFooter.STATE_LOADING);
                 } else {
-                    lastVisibleItemPosition = ((LinearLayoutManager) layoutManager).findLastVisibleItemPosition();
+                    mLoadMoreFootView.setVisibility(View.VISIBLE);
                 }
-                if (layoutManager.getChildCount() > 0
-                        && lastVisibleItemPosition >= layoutManager.getItemCount() - 1 && layoutManager.getItemCount() > layoutManager.getChildCount() && !isNoMore && mRefreshHeader.getState() < ArrowRefreshHeader.STATE_REFRESHING) {
-                    isLoadingData = true;
-                    if (mLoadMoreFootView instanceof LoadingMoreFooter) {
-                        ((LoadingMoreFooter) mLoadMoreFootView).setState(LoadingMoreFooter.STATE_LOADING);
-                    } else {
-                        mLoadMoreFootView.setVisibility(View.VISIBLE);
-                    }
-                    mLoadingListener.onLoadMore();
-                }
+                mLoadingListener.onLoadMore();
             }
         }
+    }
 
-        @Override
-        public boolean onTouchEvent(MotionEvent ev) {
-            if (mLastY == -1) {
+    @Override
+    public boolean onTouchEvent(MotionEvent ev) {
+        if (mLastY == -1) {
+            mLastY = ev.getRawY();
+        }
+        switch (ev.getAction()) {
+            case MotionEvent.ACTION_DOWN:
                 mLastY = ev.getRawY();
-            }
-            switch (ev.getAction()) {
-                case MotionEvent.ACTION_DOWN:
-                    mLastY = ev.getRawY();
-                    break;
-                case MotionEvent.ACTION_MOVE:
-                    final float deltaY = ev.getRawY() - mLastY;
-                    mLastY = ev.getRawY();
-                    if (isOnTop() && refreshEnabled && appbarState == AppBarStateChangeListener.State.EXPANDED) {
-                        mRefreshHeader.onMove(deltaY / DRAG_RATE);
-                        if (mRefreshHeader.getVisibleHeight() > 0 && mRefreshHeader.getState() < ArrowRefreshHeader.STATE_REFRESHING) {
-                            return false;
-                        }
+                break;
+            case MotionEvent.ACTION_MOVE:
+                final float deltaY = ev.getRawY() - mLastY;
+                mLastY = ev.getRawY();
+                if (isOnTop() && refreshEnabled && appbarState == AppBarStateChangeListener.State.EXPANDED) {
+                    mRefreshHeader.onMove(deltaY / DRAG_RATE);
+                    if (mRefreshHeader.getVisibleHeight() > 0 && mRefreshHeader.getState() < ArrowRefreshHeader.STATE_REFRESHING) {
+                        return false;
                     }
-                    break;
-                default:
-                    mLastY = -1; // reset
-                    if (isOnTop() && refreshEnabled && appbarState == AppBarStateChangeListener.State.EXPANDED) {
-                        if (mRefreshHeader.releaseAction()) {
-                            if (mLoadingListener != null) {
-                                mLoadingListener.onRefresh();
-                            }
-                        }
-                    }
-                    break;
-            }
-            return super.onTouchEvent(ev);
-        }
-        private int findMax(int[] lastPositions) {
-            int max = lastPositions[0];
-            for (int value : lastPositions) {
-                if (value > max) {
-                    max = value;
                 }
-            }
-            return max;
+                break;
+            default:
+                mLastY = -1; // reset
+                if (isOnTop() && refreshEnabled && appbarState == AppBarStateChangeListener.State.EXPANDED) {
+                    if (mRefreshHeader.releaseAction()) {
+                        if (mLoadingListener != null) {
+                            mLoadingListener.onRefresh();
+                        }
+                    }
+                }
+                break;
         }
+        return super.onTouchEvent(ev);
+    }
+    private int findMax(int[] lastPositions) {
+        int max = lastPositions[0];
+        for (int value : lastPositions) {
+            if (value > max) {
+                max = value;
+            }
+        }
+        return max;
+    }
 
-        private boolean isOnTop() {
-            if (mRefreshHeader.getParent() != null) {
-                return true;
-            } else {
-                return false;
-            }
+    private boolean isOnTop() {
+        if (mRefreshHeader.getParent() != null) {
+            return true;
+        } else {
+            return false;
         }
+    }
 
     @Override
     public void setLoadMoreFootView(View view) {

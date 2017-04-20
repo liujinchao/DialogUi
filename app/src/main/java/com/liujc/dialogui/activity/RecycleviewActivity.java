@@ -6,15 +6,20 @@ import android.os.Handler;
 import android.support.design.widget.AppBarLayout;
 import android.support.design.widget.CollapsingToolbarLayout;
 import android.support.design.widget.FloatingActionButton;
-import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.LinearLayout;
 
 import com.liujc.dialogui.R;
-import com.liujc.dialogui.adapter.RecycleAdapter;
+import com.widget.jcdialog.utils.ToastUitl;
 import com.widget.jcdialog.widget.RecycleView.PullToRefreshRecycleView;
+import com.widget.jcdialog.widget.RecycleView.animation.ScaleInAnimation;
+import com.widget.jcdialog.widget.RecycleView.recycle.CommonRecycleViewAdapter;
+import com.widget.jcdialog.widget.RecycleView.recycle.DividerItemDecoration;
+import com.widget.jcdialog.widget.RecycleView.recycle.OnItemClickListener;
+import com.widget.jcdialog.widget.RecycleView.recycle.ViewHolderHelper;
 
 import java.util.ArrayList;
 
@@ -26,12 +31,13 @@ import java.util.ArrayList;
  * 最近修改时间：2016/10/26 09:08
  * 修改人：Modify by liujc
  */
-public class RecycleviewActivity extends Activity implements PullToRefreshRecycleView.LoadingListener {
+public class RecycleviewActivity extends Activity implements PullToRefreshRecycleView.LoadingListener,OnItemClickListener {
 
     private Toolbar toolbar;
     private CollapsingToolbarLayout collapsingToolbar;
     private PullToRefreshRecycleView superRecyclerView;
-    private RecycleAdapter mAdapter;
+//    private RecycleAdapter mAdapter;
+    private CommonRecycleViewAdapter<String> mAdapter;
     private ArrayList<String> dataList = new ArrayList<>();
     private ArrayList<String> tempList = new ArrayList<>();
     FloatingActionButton fab;
@@ -85,6 +91,7 @@ public class RecycleviewActivity extends Activity implements PullToRefreshRecycl
         superRecyclerView.setEmptyView(findViewById(R.id.empty_view));
         superRecyclerView.setRefreshProgressStyle(0);//下拉刷新的样式
         superRecyclerView.setLoadingMoreProgressStyle(1);//上拉加载的样式
+        superRecyclerView.addItemDecoration(new DividerItemDecoration(this,DividerItemDecoration.VERTICAL_LIST));
 //        superRecyclerView.setLoadMoreFootView(View.inflate(this, R.layout.pull_to_refresh_empty_view, null));
 //        View header = LayoutInflater.from(this).inflate(R.layout.recyclerview_header, (ViewGroup)findViewById(android.R.id.content),false);
 //        superRecyclerView.addHeaderView(header);
@@ -109,7 +116,16 @@ public class RecycleviewActivity extends Activity implements PullToRefreshRecycl
 
 
     private void initAdapter() {
-        mAdapter = new RecycleAdapter(this,dataList);
+//        mAdapter = new RecycleAdapter(this,dataList);
+        mAdapter = new CommonRecycleViewAdapter<String>(this,R.layout.item_card_view) {
+            @Override
+            public void convert(ViewHolderHelper helper, String s) {
+                helper.setText(R.id.name,s);
+            }
+        };
+        mAdapter.setOnItemClickListener(this);
+        mAdapter.openLoadAnimation(new ScaleInAnimation());
+        mAdapter.addAll(dataList);
         superRecyclerView.setAdapter(mAdapter);
     }
 
@@ -120,7 +136,7 @@ public class RecycleviewActivity extends Activity implements PullToRefreshRecycl
             public void run() {
                 dataList = initData(20);
                 superRecyclerView.setOnRefreshComplete();
-                mAdapter.notifyDataSetChanged();
+                mAdapter.addAll(dataList);
             }
         }, 3000);
     }
@@ -137,8 +153,20 @@ public class RecycleviewActivity extends Activity implements PullToRefreshRecycl
                 tempList.clear();
                 tempList = getDataList(20);
                 dataList.addAll(tempList);
+                mAdapter.addAll(dataList);
                 superRecyclerView.setOnLoadMoreComplete();
             }
         }, 3000);
+    }
+
+    @Override
+    public void onItemClick(ViewGroup parent, View view, Object o, int position) {
+        ToastUitl.showToast(position+"");
+    }
+
+    @Override
+    public boolean onItemLongClick(ViewGroup parent, View view, Object o, int position) {
+        ToastUitl.showToast(position+"  longClick");
+        return true;
     }
 }
