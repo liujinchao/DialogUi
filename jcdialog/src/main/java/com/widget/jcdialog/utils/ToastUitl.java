@@ -139,7 +139,6 @@ public class ToastUitl {
      *
      * @param tvStr
      * @param imageResource
-     * @return
      */
     public static void showToastWithImg(final String tvStr, final int imageResource) {
         if (toast2 == null) {
@@ -167,7 +166,6 @@ public class ToastUitl {
     /**
      * @param toastLayout  自定义布局
      * @param gravity   显示位置
-     * @return
      */
     public static void showToastLayout(final int toastLayout, int gravity) {
         if (toast2 == null) {

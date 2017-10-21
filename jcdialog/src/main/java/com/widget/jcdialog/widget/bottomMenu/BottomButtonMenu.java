@@ -104,13 +104,6 @@ public class BottomButtonMenu extends BottomMenuWindow {
 		});
 	}
 
-	/**
-	 * @author: liujc
-	 * @Title: addButtonThird
-	 * @Description:
-	 * @param listener
-	 * @param textContent
-	 */
 	public void addButtonThird(final MenuClickedListener listener,
 							   String textContent) {
 		// 普通按钮3

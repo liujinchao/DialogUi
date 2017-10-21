@@ -19,12 +19,6 @@ import com.widget.jcdialog.listener.OnWheelChangedListener;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-/**
- * 类名称：DateSelectorWheelView
- * 创建者：Create by liujc
- * 创建时间：Create on 2016/12/26 16:29
- * 描述：TODO
- */
 public class DateSelectorWheelView extends RelativeLayout implements
         OnWheelChangedListener {
     private final String flag = this.getClass().getSimpleName();

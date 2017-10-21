@@ -173,13 +173,6 @@ public class ToolUtils {
         child.measure(childWidthSpec, childHeightSpec);
     }
 
-    /**
-     * 测量高度
-     *
-     * @param root
-     * @param id   height为0,weight为1的scrollview包裹的view的id,如果没有,传0或负数即可
-     * @return
-     */
     public static int mesureHeight(View root, int id) {
         measureView(root);
         int height = root.getMeasuredHeight();
@@ -316,11 +309,6 @@ public class ToolUtils {
     }
 
     private static Point deviceSize = null;
-    /**
-     * @author: liujc
-     * @Title: getDeviceSize
-     * @Description: 获取手机屏幕宽高
-     */
     @SuppressLint("NewApi")
     public static Point getDeviceSize(Context context) {
         if (deviceSize == null) {
