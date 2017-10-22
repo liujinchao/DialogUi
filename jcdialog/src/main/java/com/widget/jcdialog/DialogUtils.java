@@ -26,7 +26,7 @@ import java.util.Date;
 import java.util.List;
 
 /**
- * 类名称：DialogUIUtils
+ * 类名称：DialogUtils
  * 创建者：Create by liujc
  * 创建时间：Create on 2016/12/26 15:45
  * 描述：Dialog管理工具类

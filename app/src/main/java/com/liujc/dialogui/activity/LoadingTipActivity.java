@@ -16,8 +16,6 @@ import butterknife.OnClick;
  * 创建者：Create by liujc
  * 创建时间：Create on 2016/11/18 17:17
  * 描述：TODO
- * 最近修改时间：2016/11/18 17:17
- * 修改人：Modify by liujc
  */
 public class LoadingTipActivity extends Activity {
     @Bind(R.id.loadedTip)
