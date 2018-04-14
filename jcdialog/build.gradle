@@ -48,7 +48,7 @@ def libName = "DialogUi"
 //compile引用时的第1部分
 group = "com.liujc.util"
 // 版本号，//compile引用时的最后部分项目名，下次更新是只需要更改版本号即可
-version = "1.0.1"
+version = "1.0.2"
 //上面配置后上传至JCenter后的编译路径是这样的： compile 'com.liujc.util:DialogUi:1.0.1'
 
 //生成源文件
