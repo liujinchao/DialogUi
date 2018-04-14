@@ -1,10 +1,13 @@
 # DialogUi
-关于toast、等待框、对话框、选择框、下拉刷新等工具的封装
+关于toast、等待框、对话框、选择框、下拉刷新等工具的封装。
+
+在代码中build中集成`compile 'com.liujc.util:jcdialog:1.0.1'`.
 
 ## 主界面
 ![image](https://github.com/liujinchao/DialogUi/blob/master/screenshot/功能页.png)
 
-## Toast 工具   主要设置toast的显示位置及自定义toast的显示布局
+## Toast 工具   主要设置toast的显示位置及自定义toast的显示布局
+在使用ToastUitl的时候需要调用DialogUtils.init(getApplicationContext())传入上下文;
  1. 顶部toast
  ToastUitl.showToastTop("顶部的Toast");
  2. 中部toast
