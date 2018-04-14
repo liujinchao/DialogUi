@@ -171,9 +171,6 @@ public class DialogActivity extends AppCompatActivity implements View.OnClickLis
                 View rootViewB = View.inflate(mActivity, R.layout.custom_dialog_layout, null);
                 DialogUtils.showCustomBottomAlert(this, rootViewB).show();
                 break;
-            case R.id.btn_custom_bottom_alert2:
-                showBottomMenu();
-                break;
             case R.id.btn_loading_vertical:
                 DialogUtils.showLoadingVertical(this, "加载中...").show();
                 break;
@@ -326,6 +323,10 @@ public class DialogActivity extends AppCompatActivity implements View.OnClickLis
 //                showBottomMenu();
             }
             break;
+
+            case R.id.btn_custom_bottom_alert2:
+                showBottomMenu();
+                break;
             case R.id.btn_md_bottom_vertical:
                 List<TieBean> datas2 = new ArrayList<TieBean>();
                 datas2.add(new TieBean("1"));

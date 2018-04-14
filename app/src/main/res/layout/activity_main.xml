@@ -32,7 +32,8 @@
                 android:id="@+id/btn_pull_to_refresh"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="下拉刷新"/>
+                android:text="下拉刷新"
+                android:visibility="gone"/>
             <Button
                 android:id="@+id/btn_loading_tip_dialog"
                 android:layout_width="match_parent"

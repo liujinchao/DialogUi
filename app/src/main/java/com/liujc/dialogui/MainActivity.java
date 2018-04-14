@@ -14,8 +14,6 @@ import android.widget.LinearLayout;
 import com.liujc.dialogui.activity.DialogActivity;
 import com.liujc.dialogui.activity.KeyBoardActivity;
 import com.liujc.dialogui.activity.LoadingTipActivity;
-import com.liujc.dialogui.activity.RecycleviewActivity;
-import com.liujc.dialogui.activity.ToastActivity;
 import com.widget.jcdialog.DialogUtils;
 import com.widget.jcdialog.utils.ToastUitl;
 
@@ -54,7 +52,7 @@ public class MainActivity extends AppCompatActivity {
                 jumpTarget(DialogActivity.class);
                 break;
             case R.id.btn_pull_to_refresh:
-                jumpTarget(RecycleviewActivity.class);
+//                jumpTarget(RecycleviewActivity.class);
                 break;
             case R.id.btn_loading_tip_dialog:
                 jumpTarget(LoadingTipActivity.class);
