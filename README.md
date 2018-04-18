@@ -38,10 +38,6 @@
   ![image](https://github.com/liujinchao/DialogUi/blob/master/screenshot/address.png)
   ![image](https://github.com/liujinchao/DialogUi/blob/master/screenshot/jdaddress.png)
   
-  
-## 基于recycleview的下拉刷新 上拉加载列表
-![image](https://github.com/liujinchao/DialogUi/blob/master/screenshot/pull_to_refresh.png)
-![image](https://github.com/liujinchao/DialogUi/blob/master/screenshot/pull_to_refresh2.png)
 
 ## 内嵌加载等待框
 ## 支付键盘
