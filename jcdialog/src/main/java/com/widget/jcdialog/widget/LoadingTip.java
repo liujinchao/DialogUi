@@ -13,7 +13,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import com.widget.jcdialog.DialogUtils;
+import com.widget.jcdialog.XDialog;
 import com.widget.jcdialog.R;
 
 /**
@@ -128,7 +128,7 @@ public class LoadingTip extends LinearLayout {
                 img_tip_logo.setVisibility(View.VISIBLE);
                 img_tip_logo.setImageResource(R.drawable.img_loading_rotate);
                 // 旋转动画
-                Animation animation = AnimationUtils.loadAnimation(DialogUtils.appContext,R.anim.loading_rotate);
+                Animation animation = AnimationUtils.loadAnimation(XDialog.appContext,R.anim.loading_rotate);
                 img_tip_logo.startAnimation(animation);
                 tv_tips.setText(getContext().getText(R.string.loading_tip_loading).toString());
                 break;

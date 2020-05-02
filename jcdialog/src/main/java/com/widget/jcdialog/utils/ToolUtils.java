@@ -17,7 +17,7 @@ import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
 
-import com.widget.jcdialog.DialogUtils;
+import com.widget.jcdialog.XDialog;
 import com.widget.jcdialog.bean.BuildBean;
 import com.widget.jcdialog.config.CommonConfig;
 
@@ -48,12 +48,12 @@ public class ToolUtils {
      */
     public static BuildBean fixContext(BuildBean bean) {
         if (bean.mContext == null) {
-            bean.mContext = DialogUtils.appContext;
+            bean.mContext = XDialog.appContext;
         } else if (bean.mContext instanceof Activity) {
             Activity activity = (Activity) bean.mContext;
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN_MR1) {
                 if (activity.isDestroyed()) {
-                    bean.mContext = DialogUtils.appContext;
+                    bean.mContext = XDialog.appContext;
                 }
             }
         }
@@ -130,7 +130,7 @@ public class ToolUtils {
             Activity activity1 = (Activity) context;
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN_MR1) {
                 if (activity1.isDestroyed()) {
-                    context = DialogUtils.appContext;
+                    context = XDialog.appContext;
                 }
             }
         } else {
@@ -210,7 +210,7 @@ public class ToolUtils {
      */
     public static int getColor(Context context, int colorRes) {
         if (context == null) {
-            context = DialogUtils.appContext;
+            context = XDialog.appContext;
         }
         return context.getResources().getColor(colorRes);
 

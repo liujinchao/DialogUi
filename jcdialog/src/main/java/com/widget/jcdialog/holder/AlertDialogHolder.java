@@ -9,7 +9,7 @@ import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import com.widget.jcdialog.DialogUtils;
+import com.widget.jcdialog.XDialog;
 import com.widget.jcdialog.R;
 import com.widget.jcdialog.bean.BuildBean;
 import com.widget.jcdialog.utils.ToolUtils;
@@ -207,7 +207,7 @@ public class AlertDialogHolder extends SuperHolder {
             btn1Vertical.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    DialogUtils.dismiss(bean.dialog, bean.alertDialog);
+                    XDialog.dismiss(bean.dialog, bean.alertDialog);
                     bean.listener.onPositive();
 
                     bean.listener.onGetInput(et1.getText().toString().trim(), et2.getText().toString().trim());
@@ -219,7 +219,7 @@ public class AlertDialogHolder extends SuperHolder {
             btn2Vertical.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    DialogUtils.dismiss(bean.dialog, bean.alertDialog);
+                    XDialog.dismiss(bean.dialog, bean.alertDialog);
                     bean.listener.onNegative();
                 }
             });
@@ -227,7 +227,7 @@ public class AlertDialogHolder extends SuperHolder {
             btn3Vertical.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    DialogUtils.dismiss(bean.dialog, bean.alertDialog);
+                    XDialog.dismiss(bean.dialog, bean.alertDialog);
                     bean.listener.onNeutral();
                 }
             });
@@ -237,7 +237,7 @@ public class AlertDialogHolder extends SuperHolder {
             btn1.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    DialogUtils.dismiss(bean.dialog, bean.alertDialog);
+                    XDialog.dismiss(bean.dialog, bean.alertDialog);
                     bean.listener.onPositive();
                     bean.listener.onGetInput(et1.getText().toString().trim(), et2.getText().toString().trim());
                 }
@@ -246,7 +246,7 @@ public class AlertDialogHolder extends SuperHolder {
             btn2.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    DialogUtils.dismiss(bean.dialog, bean.alertDialog);
+                    XDialog.dismiss(bean.dialog, bean.alertDialog);
                     bean.listener.onNegative();
                 }
             });
@@ -254,7 +254,7 @@ public class AlertDialogHolder extends SuperHolder {
             btn3.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    DialogUtils.dismiss(bean.dialog, bean.alertDialog);
+                    XDialog.dismiss(bean.dialog, bean.alertDialog);
                     bean.listener.onNeutral();
                 }
             });

@@ -6,8 +6,8 @@ android {
     defaultConfig {
         minSdkVersion 15
         targetSdkVersion 28
-        versionCode 2
-        versionName "1.0.2"
+        versionCode 3
+        versionName "1.0.3"
 
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
 
@@ -21,14 +21,10 @@ android {
 }
 
 dependencies {
-    compile fileTree(dir: 'libs', include: ['*.jar'])
-    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
-        exclude group: 'com.android.support', module: 'support-annotations'
-    })
-    compile 'com.android.support:appcompat-v7:28.0.0'
-    compile 'com.android.support:recyclerview-v7:28.0.0'
-    compile 'com.android.support:design:28.0.0'
-    testCompile 'junit:junit:4.12'
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation 'com.android.support:appcompat-v7:28.0.0'
+    implementation 'com.android.support:recyclerview-v7:28.0.0'
+    implementation 'com.android.support:design:28.0.0'
     implementation 'com.android.support:palette-v7:28.0.0'
 }
 
@@ -46,10 +42,10 @@ def gitUrl = 'https://github.com/liujinchao/DialogUi.git'
 //发布到JCenter上的项目名字，compile引用时的第2部分项目名
 def libName = "DialogUi"
 //compile引用时的第1部分
-group = "com.liujc.util"
+group = "com.app.util"
 // 版本号，//compile引用时的最后部分项目名，下次更新是只需要更改版本号即可
-version = "1.0.2"
-//上面配置后上传至JCenter后的编译路径是这样的： compile 'com.liujc.util:DialogUi:1.0.1'
+version = "1.0.4"
+//上面配置后上传至JCenter后的编译路径是这样的： implementation 'com.app.util:jcdialog:1.0.4'
 
 //生成源文件
 task sourcesJar(type: Jar) {

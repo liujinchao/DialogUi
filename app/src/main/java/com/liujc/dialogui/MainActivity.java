@@ -16,7 +16,7 @@ import android.widget.LinearLayout;
 import com.liujc.dialogui.activity.DialogActivity;
 import com.liujc.dialogui.activity.KeyBoardActivity;
 import com.liujc.dialogui.activity.LoadingTipActivity;
-import com.widget.jcdialog.DialogUtils;
+import com.widget.jcdialog.XDialog;
 import com.widget.jcdialog.utils.ToastUitl;
 import com.widget.jcdialog.widget.updateDialog.UpdateDialogFragment;
 import com.widget.jcdialog.widget.updateDialog.listener.IDownloadCallBack;
@@ -50,7 +50,7 @@ public class MainActivity extends AppCompatActivity {
         ButterKnife.bind(this);
         mActivity = this;
         mContext = getApplication();
-        DialogUtils.init(mContext);
+        XDialog.init(mContext);
         initView();
     }
 
@@ -145,7 +145,7 @@ public class MainActivity extends AppCompatActivity {
                     }
                 })
                 .create();
-        DialogUtils.showUpdateDialog(updateAppManager, updateAppBean, new IUpdateCallback() {
+        XDialog.showUpdateDialog(updateAppManager, updateAppBean, new IUpdateCallback() {
             @Override
             public void hasNewApp(UpdateDialogFragment updateDialogFragment) {
                 ToastUitl.showToast("有更新包");

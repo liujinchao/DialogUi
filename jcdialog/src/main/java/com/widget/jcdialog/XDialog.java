@@ -34,7 +34,7 @@ import java.util.List;
  * 创建时间：Create on 2016/12/26 15:45
  * 描述：Dialog管理工具类
  */
-public class DialogUtils {
+public class XDialog {
 
     /**
      * 全局上下文
@@ -45,7 +45,7 @@ public class DialogUtils {
      * 如果有使用到showTost...相关的方法使用之前需要初始化该方法
      */
     public static void init(Context appContext) {
-        DialogUtils.appContext = appContext;
+        XDialog.appContext = appContext;
     }
 
     /**

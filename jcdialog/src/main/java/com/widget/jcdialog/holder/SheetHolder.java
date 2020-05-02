@@ -10,7 +10,7 @@ import android.text.TextUtils;
 import android.view.View;
 import android.widget.TextView;
 
-import com.widget.jcdialog.DialogUtils;
+import com.widget.jcdialog.XDialog;
 import com.widget.jcdialog.R;
 import com.widget.jcdialog.adapter.TieAdapter;
 import com.widget.jcdialog.bean.BuildBean;
@@ -65,7 +65,7 @@ public class SheetHolder extends SuperHolder {
             tvBottom.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    DialogUtils.dismiss(bean.dialog, bean.alertDialog);
+                    XDialog.dismiss(bean.dialog, bean.alertDialog);
                     bean.itemListener.onBottomBtnClick();
 
                 }
@@ -88,7 +88,7 @@ public class SheetHolder extends SuperHolder {
         bean.mAdapter.setOnItemClickListener(new OnItemClickListener() {
             @Override
             public void onItemClick(int position) {
-                DialogUtils.dismiss(bean.dialog, bean.alertDialog);
+                XDialog.dismiss(bean.dialog, bean.alertDialog);
                 bean.itemListener.onItemClick(bean.mLists.get(position).getTitle(), position);
             }
         });

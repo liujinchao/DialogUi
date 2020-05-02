@@ -13,7 +13,7 @@ import android.widget.Button;
 import android.widget.LinearLayout;
 
 import com.liujc.dialogui.R;
-import com.widget.jcdialog.DialogUtils;
+import com.widget.jcdialog.XDialog;
 import com.widget.jcdialog.adapter.TieAdapter;
 import com.widget.jcdialog.bean.BuildBean;
 import com.widget.jcdialog.bean.PopuBean;
@@ -110,7 +110,7 @@ public class DialogActivity extends AppCompatActivity implements View.OnClickLis
                 popuWindowView.showing(btnPopu);
                 break;
             case R.id.btn_select_ymd: {
-                DialogUtils.showDatePick(mActivity, Gravity.CENTER, "选择日期", System.currentTimeMillis() + 60000, DateSelectorWheelView.TYPE_YYYYMMDD, 0, new DialogUIDateTimeSaveListener() {
+                XDialog.showDatePick(mActivity, Gravity.CENTER, "选择日期", System.currentTimeMillis() + 60000, DateSelectorWheelView.TYPE_YYYYMMDD, 0, new DialogUIDateTimeSaveListener() {
                     @Override
                     public void onSaveSelectedDate(int tag, String selectedDate) {
                         showToast(selectedDate);
@@ -119,7 +119,7 @@ public class DialogActivity extends AppCompatActivity implements View.OnClickLis
             }
             break;
             case R.id.btn_select_ymdhm: {
-                DialogUtils.showDatePick(mActivity, Gravity.CENTER, "选择日期", System.currentTimeMillis() + 60000, DateSelectorWheelView.TYPE_YYYYMMDDHHMM, 0, new DialogUIDateTimeSaveListener() {
+                XDialog.showDatePick(mActivity, Gravity.CENTER, "选择日期", System.currentTimeMillis() + 60000, DateSelectorWheelView.TYPE_YYYYMMDDHHMM, 0, new DialogUIDateTimeSaveListener() {
                     @Override
                     public void onSaveSelectedDate(int tag, String selectedDate) {
                         showToast(selectedDate);
@@ -128,7 +128,7 @@ public class DialogActivity extends AppCompatActivity implements View.OnClickLis
             }
             break;
             case R.id.btn_select_ymdhms: {
-                DialogUtils.showDatePick(mActivity, Gravity.BOTTOM, "选择日期", System.currentTimeMillis() + 60000, DateSelectorWheelView.TYPE_YYYYMMDDHHMMSS, 0, new DialogUIDateTimeSaveListener() {
+                XDialog.showDatePick(mActivity, Gravity.BOTTOM, "选择日期", System.currentTimeMillis() + 60000, DateSelectorWheelView.TYPE_YYYYMMDDHHMMSS, 0, new DialogUIDateTimeSaveListener() {
                     @Override
                     public void onSaveSelectedDate(int tag, String selectedDate) {
                         showToast(selectedDate);
@@ -137,7 +137,7 @@ public class DialogActivity extends AppCompatActivity implements View.OnClickLis
             }
             break;
             case R.id.btn_select_time_ymdhms:
-                DialogUtils.showTimePickView(mActivity,"选择日期",TimePickerView.Type.ALL,new TimePickerView.OnTimeSelectListener() {
+                XDialog.showTimePickView(mActivity,"选择日期",TimePickerView.Type.ALL,new TimePickerView.OnTimeSelectListener() {
                 @Override
                 public void onTimeSelect(Date date) {
                     ToastUitl.showToast(getTime(date));
@@ -146,7 +146,7 @@ public class DialogActivity extends AppCompatActivity implements View.OnClickLis
             break;
             case R.id.btn_select_address_picker:
                 final DefaultAddressProvider addressProvider = new DefaultAddressProvider(mActivity);
-                DialogUtils.showAddrPickView(mActivity, "选择地址",addressProvider, new OptionsPickerView.OnOptionsSelectListener() {
+                XDialog.showAddrPickView(mActivity, "选择地址",addressProvider, new OptionsPickerView.OnOptionsSelectListener() {
                     @Override
                     public void onOptionsSelect(int options1, int option2, int options3) {
                         String tx = addressProvider.provideProvince().get(options1)
@@ -159,38 +159,38 @@ public class DialogActivity extends AppCompatActivity implements View.OnClickLis
             break;
             case R.id.btn_custom_alert:
                 View rootView = View.inflate(mActivity, R.layout.custom_dialog_layout, null);
-                final Dialog dialog = DialogUtils.showCustomAlert(this, rootView, Gravity.CENTER, true, false).show();
+                final Dialog dialog = XDialog.showCustomAlert(this, rootView, Gravity.CENTER, true, false).show();
                 rootView.findViewById(R.id.btn_ok).setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        DialogUtils.dismiss(dialog);
+                        XDialog.dismiss(dialog);
                     }
                 });
                 break;
             case R.id.btn_custom_bottom_alert:
                 View rootViewB = View.inflate(mActivity, R.layout.custom_dialog_layout, null);
-                DialogUtils.showCustomBottomAlert(this, rootViewB).show();
+                XDialog.showCustomBottomAlert(this, rootViewB).show();
                 break;
             case R.id.btn_loading_vertical:
-                DialogUtils.showLoadingVertical(this, "加载中...").show();
+                XDialog.showLoadingVertical(this, "加载中...").show();
                 break;
             case R.id.btn_loading_horizontal:
-                DialogUtils.showLoadingHorizontal(this, "加载中...").show();
+                XDialog.showLoadingHorizontal(this, "加载中...").show();
                 break;
             case R.id.btn_loading_vertical_gray:
-                DialogUtils.showLoadingVertical(this, "加载中...", false).show();
+                XDialog.showLoadingVertical(this, "加载中...", false).show();
                 break;
             case R.id.btn_loading_horizontal_gray:
-                DialogUtils.showLoadingHorizontal(this, "加载中...", false).show();
+                XDialog.showLoadingHorizontal(this, "加载中...", false).show();
                 break;
             case R.id.btn_md_loading_vertical:
-                DialogUtils.showMdLoadingVertical(this, "加载中...").show();
+                XDialog.showMdLoadingVertical(this, "加载中...").show();
                 break;
             case R.id.btn_md_loading_horizontal:
-                DialogUtils.showMdLoadingHorizontal(this, "加载中...").show();
+                XDialog.showMdLoadingHorizontal(this, "加载中...").show();
                 break;
             case R.id.btn_md_alert:
-                DialogUtils.showMdAlert(mActivity, "标题", msg, new DialogUIListener() {
+                XDialog.showMdAlert(mActivity, "标题", msg, new DialogUIListener() {
                     @Override
                     public void onPositive() {
                         showToast("onPositive");
@@ -204,10 +204,10 @@ public class DialogActivity extends AppCompatActivity implements View.OnClickLis
                 }).show();
                 break;
             case R.id.btn_dialog:
-                DialogUtils.showDialogTie(this, msg).show();
+                XDialog.showDialogTie(this, msg).show();
                 break;
             case R.id.btn_tie_alert:
-                DialogUtils.showAlert(mActivity, "标题", msg, "", "", "确定", "", true, new DialogUIListener() {
+                XDialog.showAlert(mActivity, "标题", msg, "", "", "确定", "", true, new DialogUIListener() {
                     @Override
                     public void onPositive() {
                         showToast("onPositive");
@@ -221,7 +221,7 @@ public class DialogActivity extends AppCompatActivity implements View.OnClickLis
                 }).show();
                 break;
             case R.id.btn_alert_horizontal:
-                DialogUtils.showAlert(mActivity, "标题", msg, "", "", "确定", "取消", false, new DialogUIListener() {
+                XDialog.showAlert(mActivity, "标题", msg, "", "", "确定", "取消", false, new DialogUIListener() {
                     @Override
                     public void onPositive() {
                         showToast("onPositive");
@@ -235,7 +235,7 @@ public class DialogActivity extends AppCompatActivity implements View.OnClickLis
                 }).show();
                 break;
             case R.id.btn_alert_vertical:
-                DialogUtils.showAlert(this, "标题", msg, "", "", "确定", "取消", true, new DialogUIListener() {
+                XDialog.showAlert(this, "标题", msg, "", "", "确定", "取消", true, new DialogUIListener() {
                     @Override
                     public void onPositive() {
                         showToast("onPositive");
@@ -249,7 +249,7 @@ public class DialogActivity extends AppCompatActivity implements View.OnClickLis
                 }).show();
                 break;
             case R.id.btn_alert_input:
-                DialogUtils.showAlert(mActivity, "登录", "", "请输入用户名", "请输入密码", "登录", "取消", false, new DialogUIListener() {
+                XDialog.showAlert(mActivity, "登录", "", "请输入用户名", "请输入密码", "登录", "取消", false, new DialogUIListener() {
                     @Override
                     public void onPositive() {
 
@@ -270,7 +270,7 @@ public class DialogActivity extends AppCompatActivity implements View.OnClickLis
             case R.id.btn_alert_multichoose:
                 String[] words = new String[]{"1", "2", "3"};
                 boolean[] choseDefault = new boolean[]{false, false, false};
-                DialogUtils.showMdMultiChoose(mActivity, "标题", words, choseDefault, new DialogUIListener() {
+                XDialog.showMdMultiChoose(mActivity, "标题", words, choseDefault, new DialogUIListener() {
                     @Override
                     public void onPositive() {
 
@@ -284,7 +284,7 @@ public class DialogActivity extends AppCompatActivity implements View.OnClickLis
                 break;
             case R.id.btn_alert_singlechoose:
                 String[] words2 = new String[]{"1", "2", "3"};
-                DialogUtils.showSingleChoose(mActivity, "单选", 0, words2, new DialogUIItemListener() {
+                XDialog.showSingleChoose(mActivity, "单选", 0, words2, new DialogUIItemListener() {
                     @Override
                     public void onItemClick(CharSequence text, int position) {
                         showToast(text + "--" + position);
@@ -296,7 +296,7 @@ public class DialogActivity extends AppCompatActivity implements View.OnClickLis
                 strings.add(new TieBean("1"));
                 strings.add(new TieBean("2"));
                 strings.add(new TieBean("3"));
-                DialogUtils.showCenterSheet(mActivity, strings, new DialogUIItemListener() {
+                XDialog.showCenterSheet(mActivity, strings, new DialogUIItemListener() {
                     @Override
                     public void onItemClick(CharSequence text, int position) {
                         showToast(text);
@@ -314,7 +314,7 @@ public class DialogActivity extends AppCompatActivity implements View.OnClickLis
                 strings.add(new TieBean("1"));
                 strings.add(new TieBean("2"));
                 strings.add(new TieBean("3"));
-                DialogUtils.showMdBottomSheet(mActivity, true, "", strings, "取消", 0, new DialogUIItemListener() {
+                XDialog.showMdBottomSheet(mActivity, true, "", strings, "取消", 0, new DialogUIItemListener() {
                     @Override
                     public void onItemClick(CharSequence text, int position) {
                         showToast(text + "---" + position);
@@ -336,7 +336,7 @@ public class DialogActivity extends AppCompatActivity implements View.OnClickLis
                 datas2.add(new TieBean("5"));
                 datas2.add(new TieBean("6"));
                 TieAdapter adapter = new TieAdapter(mContext, datas2);
-                BuildBean buildBean = DialogUtils.showMdBottomSheet(mActivity, true, "", datas2, "", 0, new DialogUIItemListener() {
+                BuildBean buildBean = XDialog.showMdBottomSheet(mActivity, true, "", datas2, "", 0, new DialogUIItemListener() {
                     @Override
                     public void onItemClick(CharSequence text, int position) {
                         showToast(text + "---" + position);
@@ -353,7 +353,7 @@ public class DialogActivity extends AppCompatActivity implements View.OnClickLis
                 datas3.add(new TieBean("4"));
                 datas3.add(new TieBean("5"));
                 datas3.add(new TieBean("6"));
-                DialogUtils.showMdBottomSheet(mActivity, false, "标题", datas3, "", 4, new DialogUIItemListener() {
+                XDialog.showMdBottomSheet(mActivity, false, "标题", datas3, "", 4, new DialogUIItemListener() {
                     @Override
                     public void onItemClick(CharSequence text, int position) {
                         showToast(text + "---" + position);
@@ -362,7 +362,7 @@ public class DialogActivity extends AppCompatActivity implements View.OnClickLis
                 break;
             case R.id.btn_select_address:
 //                jumpTarget(JDAddressSelectActivity.class);
-                final BottomDialog dialog1 = DialogUtils.showAddressDialog(mActivity);
+                final BottomDialog dialog1 = XDialog.showAddressDialog(mActivity);
                 dialog1.setOnAddressSelectedListener(new OnAddressSelectedListener() {
                     @Override
                     public void onAddressSelected(ProvinceModel province, CityModel city, DistrictModel county) {

@@ -15,7 +15,7 @@ import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
-import com.widget.jcdialog.DialogUtils;
+import com.widget.jcdialog.XDialog;
 import com.widget.jcdialog.R;
 import com.widget.jcdialog.bean.BuildBean;
 import com.widget.jcdialog.config.CommonConfig;
@@ -300,7 +300,7 @@ public class Buildable {
                         }
 
                         if (bean.listener == null) {
-                            DialogUtils.dismiss(dialogInterface);
+                            XDialog.dismiss(dialogInterface);
                         }
 
                     }
@@ -319,7 +319,7 @@ public class Buildable {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
                         if (bean.listener != null) {
-                            DialogUtils.dismiss(dialogInterface);
+                            XDialog.dismiss(dialogInterface);
                             bean.listener.onPositive();
                             bean.listener.onGetChoose(bean.checkedItems);
                         }
@@ -329,7 +329,7 @@ public class Buildable {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
                         if (bean.listener != null) {
-                            DialogUtils.dismiss(dialogInterface);
+                            XDialog.dismiss(dialogInterface);
                             bean.listener.onNegative();
                         }
                     }
