@@ -42,7 +42,7 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
@@ -60,7 +60,7 @@ public class DialogActivity extends AppCompatActivity implements View.OnClickLis
     Context mContext;
     Activity mActivity;
     String msg = "别总是来日方长，这世上挥手之间的都是人走茶凉。";
-    @Bind(R.id.btn_popu)
+    @BindView(R.id.btn_popu)
     Button btnPopu;
     @Override
     protected void onCreate(Bundle savedInstanceState) {

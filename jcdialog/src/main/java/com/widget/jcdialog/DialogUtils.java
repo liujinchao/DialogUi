@@ -21,6 +21,9 @@ import com.widget.jcdialog.widget.JDAddressSeletor.OnAddressSelectedListener;
 import com.widget.jcdialog.widget.pickerview.OptionsPickerView;
 import com.widget.jcdialog.widget.pickerview.TimePickerView;
 import com.widget.jcdialog.widget.pswKeyBoard.widget.PopEnterPassword;
+import com.widget.jcdialog.widget.updateDialog.UpdateAppBean;
+import com.widget.jcdialog.widget.updateDialog.UpdateAppManager;
+import com.widget.jcdialog.widget.updateDialog.listener.IUpdateCallback;
 
 import java.util.Date;
 import java.util.List;
@@ -553,5 +556,17 @@ public class DialogUtils {
         popEnterPassword.showAtLocation(parentView,
                 Gravity.BOTTOM | Gravity.CENTER_HORIZONTAL, 0, 0); // 设置layout在PopupWindow中显示的位置
         return popEnterPassword;
+    }
+
+    /**
+     * app升级弹框
+     * @param updateAppManager
+     * @param updateAppBean
+     * @param updateCallback
+     */
+    public static void showUpdateDialog(UpdateAppManager updateAppManager,
+                                        UpdateAppBean updateAppBean,
+                                        IUpdateCallback updateCallback){
+        updateAppManager.checkUpdate(updateAppBean, updateCallback);
     }
 }

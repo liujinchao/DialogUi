@@ -7,7 +7,7 @@ import android.view.View;
 import com.liujc.dialogui.R;
 import com.widget.jcdialog.widget.LoadingTip;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
@@ -18,7 +18,7 @@ import butterknife.OnClick;
  * 描述：TODO
  */
 public class LoadingTipActivity extends Activity {
-    @Bind(R.id.loadedTip)
+    @BindView(R.id.loadedTip)
     LoadingTip loadedTip;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,7 +34,6 @@ public class LoadingTipActivity extends Activity {
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        ButterKnife.unbind(this);//解绑
     }
 
     @OnClick({R.id.loading_tip_loading,R.id.loading_tip_empty,R.id.loading_tip_no_net,R.id.loading_tip_reload,R.id.loading_tip_net_error})

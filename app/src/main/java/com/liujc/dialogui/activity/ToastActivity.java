@@ -17,8 +17,6 @@ import butterknife.OnClick;
  * 创建者：Create by liujc
  * 创建时间：Create on 2016/12/29 14:08
  * 描述：TODO
- * 最近修改时间：2016/12/29 14:08
- * 修改人：Modify by liujc
  */
 public class ToastActivity extends AppCompatActivity implements View.OnClickListener{
     private Context context;
