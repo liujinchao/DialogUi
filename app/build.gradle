@@ -27,4 +27,5 @@ dependencies {
     implementation 'com.jakewharton:butterknife:8.8.1'
     annotationProcessor 'com.jakewharton:butterknife-compiler:8.8.1'
     implementation project(':jcdialog')
+//    implementation 'com.app.util:jcdialog:1.1.2'
 }
