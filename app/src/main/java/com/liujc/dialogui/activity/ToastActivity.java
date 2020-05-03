@@ -1,13 +1,12 @@
 package com.liujc.dialogui.activity;
 
-import android.app.Activity;
 import android.content.Context;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
 import com.liujc.dialogui.R;
-import com.widget.jcdialog.utils.ToastUitl;
+import com.widget.jcdialog.utils.ToastUtil;
 
 import butterknife.ButterKnife;
 import butterknife.OnClick;
@@ -32,17 +31,17 @@ public class ToastActivity extends AppCompatActivity implements View.OnClickList
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.btn_toast_top:
-                ToastUitl.showToastTop("顶部的Toast");
+                ToastUtil.showToastTop("顶部的Toast");
 //                ToastUitl.showToastWithImg("顶部的Toast", R.drawable.ic_success);
                 break;
             case R.id.btn_toast_center:
-                ToastUitl.showToastCenter("中部的Toast");
+                ToastUtil.showToastCenter("中部的Toast");
                 break;
             case R.id.btn_toast:
-                ToastUitl.showToast("默认的Toast");
+                ToastUtil.showToast("默认的Toast");
                 break;
             case R.id.btn_toast_img:
-                ToastUitl.showToastWithImg("image Toast",R.drawable.ic_success);
+                ToastUtil.showToastWithImg("image Toast",R.drawable.ic_success);
                 break;
         }
     }

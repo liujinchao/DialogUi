@@ -2,6 +2,8 @@ package com.widget.jcdialog.widget;
 
 import android.content.Context;
 import android.graphics.drawable.BitmapDrawable;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.AdapterView;
@@ -19,15 +21,13 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * 类名称：PopuWindowView
- * 创建者：Create by liujc
  * 创建时间：Create on 2016/12/26 16:29
- * 描述：PopuWindowView,下拉选择列表
+ * 描述：PopupWindowView,下拉选择列表
  */
-public class PopuWindowView implements AdapterView.OnItemClickListener {
+public class PopupWindowView {
 
     View viewItem = null;
-    ListView pupoListView;
+    RecyclerView rcvPopupWindowList;
     PopupWindow pullDownView;// 弹出窗口
     private List<PopuBean> popuLists = new ArrayList<PopuBean>();
     private PopuWindowAdapter mPopuWindowAdapter;
@@ -35,27 +35,35 @@ public class PopuWindowView implements AdapterView.OnItemClickListener {
     private TdataListener mTdataListener;
     private int maxLine = 5;
 
-    public PopuWindowView(Context mContext, int widthGravity) {
+    public PopupWindowView(Context mContext, int widthGravity) {
         this.mContext = mContext;
         LayoutInflater inflater = LayoutInflater.from(mContext);
         viewItem = inflater.inflate(R.layout.dialogui_popu_options, null);
-        pupoListView = (ListView) viewItem.findViewById(R.id.customui_list);
+        rcvPopupWindowList =  viewItem.findViewById(R.id.rcv_popup_window_list);
         mPopuWindowAdapter = new PopuWindowAdapter(mContext, popuLists);
-        pupoListView.setAdapter(mPopuWindowAdapter);
+        rcvPopupWindowList.setLayoutManager(new LinearLayoutManager(mContext));
+        rcvPopupWindowList.setAdapter(mPopuWindowAdapter);
         pullDownView = new PopupWindow(viewItem, widthGravity,
                 LayoutParams.WRAP_CONTENT, true);
         pullDownView.setOutsideTouchable(true);
         pullDownView.setBackgroundDrawable(new BitmapDrawable());
-        pupoListView.setOnItemClickListener(this);
+        mPopuWindowAdapter.setClickListener(new PopuWindowAdapter.PopupWindowClickListener() {
+            @Override
+            public void setOnclickListener(int position, PopuBean popuBean) {
+                if (mTdataListener != null) {
+                    mTdataListener.onItemClick(position, PopupWindowView.this);
+                }
+            }
+        });
     }
 
     /**
      * 设置下拉框的数据
      */
-    public void initPupoData(TdataListener tdataListener) {
+    public void initPopupData(TdataListener tdataListener) {
         mTdataListener = tdataListener;
         if (mTdataListener != null) {
-            mTdataListener.initPupoData(popuLists);
+            mTdataListener.initPopupData(popuLists);
         }
         if (popuLists != null && popuLists.size() > maxLine) {
             pullDownView.setHeight(dip2px(maxLine * 40));
@@ -69,58 +77,55 @@ public class PopuWindowView implements AdapterView.OnItemClickListener {
     }
 
     /**
-     * 设置最大行popuWindow
+     * 设置最大行popupWindow
      */
     public void setMaxLines(int maxLines) {
         maxLine = maxLines;
     }
 
     /**
-     * 显示popuWindow
+     * 显示popupWindow
      */
     public void showing(View v) {
         pullDownView.showAsDropDown(v, 0, 0);
     }
 
+    public void showAsDropDown(View v, int xoff, int yoff ) {
+        pullDownView.showAsDropDown(v, xoff, yoff);
+    }
+
     /**
-     * 关闭popuWindow
+     * 关闭popupWindow
      */
     public void dismiss() {
         pullDownView.dismiss();
     }
 
-    @Override
-    public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
-        if (mTdataListener != null) {
-            mTdataListener.onItemClick(adapterView, view, position);
-        }
-    }
-
     /**
      * 获取选择的PopuBean
      */
-    public PopuBean getPopuBean(int popuPosition){
-        return popuLists.get(popuPosition);
+    public PopuBean getPopupBean(int popupPosition){
+        return popuLists.get(popupPosition);
     }
     /**
      * 获取选择的名称
      */
-    public String getTitle(int popuPosition) {
-        return popuLists.get(popuPosition).getTitle();
+    public String getTitle(int popupPosition) {
+        return popuLists.get(popupPosition).getTitle();
     }
 
     /**
      * 获取选择的id
      */
-    public int getId(int popuPosition) {
-        return popuLists.get(popuPosition).getId();
+    public int getId(int popupPosition) {
+        return popuLists.get(popupPosition).getId();
     }
 
     /**
      * 获取选择的sid
      */
-    public String getSid(int popuPosition) {
-        return popuLists.get(popuPosition).getSid();
+    public String getSid(int popupPosition) {
+        return popuLists.get(popupPosition).getSid();
     }
 
 }

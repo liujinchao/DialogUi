@@ -17,7 +17,7 @@ import com.liujc.dialogui.activity.DialogActivity;
 import com.liujc.dialogui.activity.KeyBoardActivity;
 import com.liujc.dialogui.activity.LoadingTipActivity;
 import com.widget.jcdialog.XDialog;
-import com.widget.jcdialog.utils.ToastUitl;
+import com.widget.jcdialog.utils.ToastUtil;
 import com.widget.jcdialog.widget.updateDialog.UpdateDialogFragment;
 import com.widget.jcdialog.widget.updateDialog.listener.IDownloadCallBack;
 import com.widget.jcdialog.widget.updateDialog.listener.IUpdateCallback;
@@ -124,7 +124,7 @@ public class MainActivity extends AppCompatActivity {
                 .handleException(new ExceptionHandler() {
                     @Override
                     public void onException(Exception e) {
-                        ToastUitl.showToast(e.getLocalizedMessage());
+                        ToastUtil.showToast(e.getLocalizedMessage());
                     }
                 })
                 .dismissNotificationProgress()
@@ -132,7 +132,7 @@ public class MainActivity extends AppCompatActivity {
                 .setUpdateDialogFragmentListener(new IUpdateDialogFragmentListener() {
                     @Override
                     public void startDownloadApk(UpdateAppBean updateApp, final IDownloadCallBack downloadCallback) {
-                        ToastUitl.showToast("开始下载");
+                        ToastUtil.showToast("开始下载");
                         doDownLoadAction(downloadCallback);
                     }
 
@@ -141,19 +141,19 @@ public class MainActivity extends AppCompatActivity {
                         if(updateApp.isForceUpdate()){
                             // 处理强制更新，被用户cancel的情况
                         }
-                        ToastUitl.showToast("取消更新");
+                        ToastUtil.showToast("取消更新");
                     }
                 })
                 .create();
         XDialog.showUpdateDialog(updateAppManager, updateAppBean, new IUpdateCallback() {
             @Override
             public void hasNewApp(UpdateDialogFragment updateDialogFragment) {
-                ToastUitl.showToast("有更新包");
+                ToastUtil.showToast("有更新包");
             }
 
             @Override
             public void noNewApp() {
-                ToastUitl.showToast("当前已是最新包");
+                ToastUtil.showToast("当前已是最新包");
             }
         });
     }
@@ -167,7 +167,7 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
     public void showToast(CharSequence msg) {
-        ToastUitl.showToastLong(msg.toString());
+        ToastUtil.showToastLong(msg.toString());
     }
 
     /**

@@ -22,13 +22,13 @@ import com.widget.jcdialog.listener.DialogUIDateTimeSaveListener;
 import com.widget.jcdialog.listener.DialogUIItemListener;
 import com.widget.jcdialog.listener.DialogUIListener;
 import com.widget.jcdialog.listener.TdataListener;
-import com.widget.jcdialog.utils.ToastUitl;
+import com.widget.jcdialog.utils.ToastUtil;
 import com.widget.jcdialog.widget.CommonDialog;
 import com.widget.jcdialog.widget.DateSelectorWheelView;
 import com.widget.jcdialog.widget.JDAddressSeletor.BottomDialog;
 import com.widget.jcdialog.widget.JDAddressSeletor.DefaultAddressProvider;
 import com.widget.jcdialog.widget.JDAddressSeletor.OnAddressSelectedListener;
-import com.widget.jcdialog.widget.PopuWindowView;
+import com.widget.jcdialog.widget.PopupWindowView;
 import com.widget.jcdialog.widget.bottomMenu.BottomButtonMenu;
 import com.widget.jcdialog.widget.bottomMenu.BottomMenuWindow;
 import com.widget.jcdialog.widget.pickerview.OptionsPickerView;
@@ -46,7 +46,7 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
-import static com.widget.jcdialog.utils.ToastUitl.showToast;
+import static com.widget.jcdialog.utils.ToastUtil.showToast;
 
 /**
  * 类名称：DialogActivity
@@ -89,10 +89,9 @@ public class DialogActivity extends AppCompatActivity implements View.OnClickLis
             case R.id.btn_address_dialog:
                 break;
             case R.id.btn_popu:
-                final PopuWindowView popuWindowView = new PopuWindowView(mContext, LinearLayout.LayoutParams.WRAP_CONTENT);
-                popuWindowView.initPupoData(new TdataListener() {
+                XDialog.showPopupWindow(mContext, btnPopu,new TdataListener() {
                     @Override
-                    public void initPupoData(List<PopuBean> lists) {
+                    public void initPopupData(List<PopuBean> lists) {
                         for (int i = 0; i < 5; i++) {
                             PopuBean popu = new PopuBean();
                             popu.setTitle("item"+i);
@@ -102,12 +101,11 @@ public class DialogActivity extends AppCompatActivity implements View.OnClickLis
                     }
 
                     @Override
-                    public void onItemClick(AdapterView<?> adapterView, View view, int position) {
-                        showToast(popuWindowView.getTitle(position));
-                        popuWindowView.dismiss();
+                    public void onItemClick(int position, PopupWindowView popupWindowView) {
+                        showToast("标题："+popupWindowView.getTitle(position));
+                        popupWindowView.dismiss();
                     }
                 });
-                popuWindowView.showing(btnPopu);
                 break;
             case R.id.btn_select_ymd: {
                 XDialog.showDatePick(mActivity, Gravity.CENTER, "选择日期", System.currentTimeMillis() + 60000, DateSelectorWheelView.TYPE_YYYYMMDD, 0, new DialogUIDateTimeSaveListener() {
@@ -140,7 +138,7 @@ public class DialogActivity extends AppCompatActivity implements View.OnClickLis
                 XDialog.showTimePickView(mActivity,"选择日期",TimePickerView.Type.ALL,new TimePickerView.OnTimeSelectListener() {
                 @Override
                 public void onTimeSelect(Date date) {
-                    ToastUitl.showToast(getTime(date));
+                    ToastUtil.showToast(getTime(date));
                 }
             });
             break;
@@ -153,7 +151,7 @@ public class DialogActivity extends AppCompatActivity implements View.OnClickLis
                                 + addressProvider.provideCities().get(options1).get(option2)
                                 + addressProvider.provideCounties().get(options1).get(option2).get(options3).getPickerViewText()
                                 +addressProvider.provideZipCode().get(addressProvider.provideCounties().get(options1).get(option2).get(options3).getPickerViewText());
-                        ToastUitl.showToast(tx);
+                        ToastUtil.showToast(tx);
                     }
                 });
             break;

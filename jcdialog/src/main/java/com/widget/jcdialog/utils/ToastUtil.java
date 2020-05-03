@@ -20,7 +20,7 @@ import com.widget.jcdialog.R;
  * 最近修改时间：2016/11/15 15:39
  * 修改人：Modify by liujc
  */
-public class ToastUitl {
+public class ToastUtil {
     private static Toast toast2;
     private static Toast mToast;
     private static Toast mToastTop;

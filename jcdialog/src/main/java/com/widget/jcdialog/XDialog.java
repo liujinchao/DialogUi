@@ -8,16 +8,21 @@ import android.content.DialogInterface;
 import android.support.v7.app.AppCompatDialog;
 import android.view.Gravity;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.LinearLayout;
 
 import com.widget.jcdialog.bean.BuildBean;
+import com.widget.jcdialog.bean.PopuBean;
 import com.widget.jcdialog.bean.TieBean;
 import com.widget.jcdialog.listener.DialogAssigner;
 import com.widget.jcdialog.listener.DialogUIDateTimeSaveListener;
 import com.widget.jcdialog.listener.DialogUIItemListener;
 import com.widget.jcdialog.listener.DialogUIListener;
+import com.widget.jcdialog.listener.TdataListener;
 import com.widget.jcdialog.widget.JDAddressSeletor.BottomDialog;
 import com.widget.jcdialog.widget.JDAddressSeletor.DefaultAddressProvider;
 import com.widget.jcdialog.widget.JDAddressSeletor.OnAddressSelectedListener;
+import com.widget.jcdialog.widget.PopupWindowView;
 import com.widget.jcdialog.widget.pickerview.OptionsPickerView;
 import com.widget.jcdialog.widget.pickerview.TimePickerView;
 import com.widget.jcdialog.widget.pswKeyBoard.widget.PopEnterPassword;
@@ -99,7 +104,7 @@ public class XDialog {
      * @param context   上下文
      * @param gravity   显示位置
      * @param dateTitle 显示标题
-     * @param date      当前选择日志
+     * @param date      当前选择日期
      * @param dateType  显示日期样式DateSelectorWheelView.TYPE_YYYYMMDD TYPE_YYYYMMDDHHMM TYPE_YYYYMMDDHHMMSS
      * @param tag       view标记tag 一个页面多个日期选择器是可以加标记区分
      * @param listener
@@ -518,6 +523,16 @@ public class XDialog {
      */
     public static BuildBean showCustomAlert(Context context, View contentView, int gravity, boolean cancleable, boolean outsideTouchable) {
         return DialogAssigner.getInstance().assignCustomAlert(context, contentView, gravity, cancleable, outsideTouchable);
+    }
+
+    /**
+     * 展示PopupWindow
+     */
+    public static PopupWindowView showPopupWindow(Context context, View target, TdataListener dataListener){
+        final PopupWindowView popupWindowView = new PopupWindowView(context, LinearLayout.LayoutParams.WRAP_CONTENT);
+        popupWindowView.initPopupData(dataListener);
+        popupWindowView.showing(target);
+        return popupWindowView;
     }
 
     /**
