@@ -22,10 +22,12 @@
  4. 显示带图片的toast
 
  ToastUtil.showToastWithImg("image Toast",R.drawable.ic_success);
- ![image](https://github.com/liujinchao/DialogUi/blob/master/screenshot/toast.png)
+
  5. 自定义布局和显示位置的toast
 
  ToastUtil.showToastLayout(toastLayout, gravity)
+
+  ![image](https://github.com/liujinchao/DialogUi/blob/master/screenshot/toast.png)
  
 ## 对话框工具
 ![image](https://github.com/liujinchao/DialogUi/blob/master/screenshot/dialog.png)
